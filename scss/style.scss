@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #232323;
+}
+
+.contenedor {
+    color: #eee;
+    background-color: #232323;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-columns: auto;
+    justify-content: center;
+    grid-template-areas: 'nav contenido';
+    //contenedor principal
+    &__principal {
+        grid-area: contenido;
+        padding: 30px;
+        height: 500px;
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        border: 2px solid #eee;
+        border-radius: 25px;
+        padding: 30px;
+        position: relative;
+        z-index: 10;
+    }
+    //contenedor inicial
+    &__inicial {
+        position: absolute;
+        left: -5000px;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    //contenedor secundario 
+    &__secundario {
+        position: absolute;
+        left: -5000px;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__input {
+        width: 300px;
+        height: 30px;
+        background-color: #eee;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        margin: 10px;
+        padding: 14px;
+    }
+    &__input:hover {
+        background-color: #cccccc;
+        color: #232323;
+    }
+    //contenedor terciario
+    &__terciario {
+        position: absolute;
+        left: -5000px;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .activa {
+        position: relative;
+        left: 0;
+    }
+    //select
+    &__select {
+        width: 18.75rem;
+        padding: 5px;
+        align-self: center;
+        color: #eee;
+        border-radius: 10px;
+    }
+    &__select option {
+        background-color: #3f3f3f;
+    } //botones
+    &____btn {
+        display: flex;
+        flex-direction: row;
+    }
+    &__btn--iniciar {
+        width: 120px;
+        color: #fff;
+        background-color: #0177ec;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    &__btn--reiniciar {
+        width: 120px;
+        color: #fff;
+        background-color: #ecc101;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    &__btn--parar {
+        width: 120px;
+        color: #fff;
+        background-color: #f30606;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    &__btn--marcar {
+        width: 120px;
+        color: #fff;
+        background-color: #1bc015;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    &__btn--agregar {
+        width: 120px;
+        color: #fff;
+        background-color: #1bc015;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    &__btn--iniciar:hover {
+        background-color: #1013ad;
+    }
+    &__btn--reiniciar:hover {
+        background-color: #ec8601;
+    }
+    &__btn--marcar:hover {
+        background-color: #168a12;
+    }
+    &__btn--agregar:hover {
+        background-color: #168a12;
+    }
+    &__btn--parar:hover {
+        background-color: #ce1313;
+    }
+}
+
+.nav {
+    grid-area: nav;
+    align-self: center;
+    background-color: #232323;
+    &__contenedor {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+    }
+    &__item {
+        border: 2px solid #eee;
+        border-radius: 10px;
+        line-height: 2.5;
+        padding: 1em;
+        transform: translate(10px);
+        cursor: pointer;
+    }
+    &__item:hover {
+        background-color: #3f3f3f;
+    }
+    .activa {
+        background-color: #3f3f3f;
+        border-right: none;
+        z-index: 20;
+    }
+}
