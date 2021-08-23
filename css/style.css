@@ -30,6 +30,28 @@
   position: relative;
   z-index: 10;
 }
+.contenedor__temporizador {
+  margin: 15px;
+  padding: 10px;
+}
+.contenedor__resultado {
+  width: 80%;
+  padding: 10px;
+  margin-top: 20px;
+}
+.contenedor__resultados {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  border: 2px #eee solid;
+  border-radius: 10px;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100px;
+}
 .contenedor__inicial {
   position: absolute;
   left: -5000px;
@@ -74,6 +96,9 @@
 .contenedor .activa {
   position: relative;
   left: 0;
+}
+.contenedor__error {
+  color: #f30606;
 }
 .contenedor__select {
   width: 18.75rem;

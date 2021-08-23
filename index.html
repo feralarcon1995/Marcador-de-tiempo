@@ -28,10 +28,11 @@
                 <!--- temporizador-->
                 <h1 class="contenedor__titulo">Marcador de tiempo</h1>
                 <select class="contenedor__select">
-                    <option selected required>Seleccionar Clase</option>
+                    <option selected required value="">Seleccionar Clase</option>
                     <option value="0">Clase 15 - Github</option>
                     <option value="1">Clase 11 - Sass</option>
                 </select>
+                <span class="contenedor__error"></span>
                 <div class="contenedor__tiempo">
                     <p id="temporizador" class="contenedor__temporizador">00:00:00</p>
                 </div>
@@ -44,7 +45,9 @@
 
                 <div class="contenedor__resultado">
                     <h2 class="contenedor__titulo">Tiempos marcados</h2>
-                    <li>00:00 - Inicio</li>
+                    <ul class="contenedor__resultados">
+                        <li>00:00:00 - Inicio</li>
+                    </ul>
                 </div>
             </div>
             <!-- contenedor secundario -->
