@@ -37,6 +37,9 @@ let clases = [
 
 ];
 
+let marcadoresGuardados = [];
+
+let marcadores = [];
 
 //DECLARANDO VARIABLES
 let iniciarBtn = document.querySelector('.contenedor__btn--iniciar');
@@ -46,6 +49,7 @@ let temporizador = document.querySelector('.contenedor__temporizador');
 let tiempoContenedor = document.querySelector('.contenedor__resultados');
 let seleccionarClase = document.querySelector('select');
 let errorSpan = document.querySelector('.contenedor__error');
+let btnGuardar = document.querySelector('#btn-guardado');
 //VARIABLES DE TIEMPO
 let tiempo = 0;
 let hora = 0;
@@ -105,6 +109,7 @@ function iniciarContador() {
 function empezarConteo() {
     iniciarBtn.addEventListener('click', validar);
     reiniciarBtn.addEventListener('click', reiniciarContador);
+    btnGuardar.addEventListener('click', guardarMarcador);
 
 }
 
@@ -115,7 +120,9 @@ function reiniciarContador() {
     iniciarBtn.classList.remove("contenedor__btn--parar");
     iniciarBtn.classList.add("contenedor__btn--iniciar");
     tiempo = 0;
-    temporizador.innerHTML = `${tiempo}:00`;
+    temporizador.innerHTML = `00:00:00
+    `;
+    tiempoContenedor.innerHTML = ` <li> 00:00:00 - Inicio </li>`;
     clearInterval(intervalo);
 }
 
@@ -126,15 +133,63 @@ function validar() {
         errorSpan.innerHTML = `<p>Selecciona una clase por favor.</p>`
     } else {
         errorSpan.innerHTML = "";
+
         iniciarContador();
         marcarBtn.addEventListener('click', grabarMarcador);
     }
 }
-//FUNCION GUARDAR MARCADOR
+//FUNCION GRABAR MARCADOR
+
 function grabarMarcador() {
     let eleccion = seleccionarClase.value;
+
     posicion++;
     tiempoContenedor.innerHTML +=
-        `<li>${horaMax}:${minutosMax}:${segundosMax} - ${clases[eleccion][posicion]}</li>`;
+        `<p>${horaMax}:${minutosMax}:${segundosMax} - ${clases[eleccion][posicion]}</p>`;
+}
+
+//FUNCION GUARDAR MARCADOR POR LOCALSTORAGE
+
+function guardarMarcador() {
+
+    let eleccion = seleccionarClase.value;
+    let date = new Date()
+    let dia = date.getDate()
+    let mes = date.getMonth() + 1
+    let anio = date.getFullYear()
+
+    let fecha = `${dia}-${mes}-${anio} `;
+
+    marcadores.push(`${fecha}`, `${clases[eleccion][0]}`, `${tiempoContenedor}`);
+
+    localStorage.setItem('datosGuardados', JSON.stringify(marcadores));
+    console.info(marcadores + 'se guardo');
+
 
 }
+
+
+//SECCION TRES DEL MARCADOR
+
+let contenedorGuardado = document.querySelector('.contenedor__guardado');
+
+let marcadorLocal = JSON.parse(localStorage.getItem('datosGuardados'));
+
+contenedorGuardado.innerHTML += `<div class="contenedor__marcadoresGuardados">
+<button class="contenedor__btn-borrar" id="btn-borrar">X</button>
+<p>Fecha: ${marcadorLocal[0]}</p>
+<p>Clase: ${marcadorLocal[1]}</p>
+<p>Marcadores:</p>
+${marcadorLocal[2]}
+</div>
+`;
+
+let contenedorHijo = document.querySelector('.contenedor__marcadoresGuardados')
+let btnBorrar = document.querySelector('#btn-borrar');
+btnBorrar.addEventListener('click', borrar)
+
+function borrar() {
+    contenedorGuardado.removeChild(contenedorHijo);
+
+}
+console.log(`${marcadorLocal[0]} -  ${marcadorLocal[1]} - ${marcadorLocal[2]} `)

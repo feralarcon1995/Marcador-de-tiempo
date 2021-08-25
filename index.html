@@ -28,9 +28,9 @@
                 <!--- temporizador-->
                 <h1 class="contenedor__titulo">Marcador de tiempo</h1>
                 <select class="contenedor__select">
-                    <option selected required value="">Seleccionar Clase</option>
-                    <option value="0">Clase 15 - Github</option>
-                    <option value="1">Clase 11 - Sass</option>
+                    <option selected required value="" class="option-select">Seleccionar Clase</option>
+                    <option class="option-select" value="0">Clase 15 - Github</option>
+                    <option class="option-select" value="1">Clase 11 - Sass</option>
                 </select>
                 <span class="contenedor__error"></span>
                 <div class="contenedor__tiempo">
@@ -45,21 +45,25 @@
 
                 <div class="contenedor__resultado">
                     <h2 class="contenedor__titulo">Tiempos marcados</h2>
-                    <ul class="contenedor__resultados">
-                        <li>00:00:00 - Inicio</li>
-                    </ul>
+                    <div class="contenedor__resultados">
+                        <p>00:00:00 - Inicio</p>
+                    </div>
+                    <button class="contenedor__btn--guardar" id="btn-guardado">Guardar Marcador</button>
                 </div>
             </div>
             <!-- contenedor secundario -->
             <div class="contenedor__secundario panel">
                 <h2 class="contenedor__titulo">Agregar titulos de after class</h2>
+
+                <input type="text" class="contenedor__input" placeholder="Numero de clase" id="inputValorNumber ">
+                <input type=" text " class="contenedor__input " placeholder="Agregar titulos after class " id="inputValorText ">
+                <button class="contenedor__btn--agregar " id="agregar">agregar after</button>
                 <div class="contenedor__agregado"></div>
-                <input type="text" class="contenedor__input" placeholder="Agregar titulos after class"> <button class="contenedor__btn--agregar">agregar after</button>
             </div>
             <!-- contenedor terciario -->
-            <div class="contenedor__terciario panel">
-                <h2 class="contenedor__titulo">Marcadores guardados</h2>
-                <div class="contenedor__guardado"></div>
+            <div class="contenedor__terciario panel ">
+                <h2 class="contenedor__titulo ">Marcadores guardados</h2>
+                <div class="contenedor__guardado "></div>
             </div>
         </div>
 
@@ -70,7 +74,7 @@
 
 
     <!-- link al js-->
-    <script src="./js/app.js"></script>
+    <script src="./js/app.js "></script>
 </body>
 
 </html>

@@ -38,6 +38,12 @@
         width: 80%;
         padding: 10px;
         margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__resultado p {
+        margin: 0;
     }
     &__resultados {
         display: flex;
@@ -100,6 +106,16 @@
         position: relative;
         left: 0;
     }
+    &__marcadoresGuardados {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border: 2px solid #eee;
+        border-radius: 10px;
+    }
     //select
     &__error {
         color: #f30606;
@@ -142,6 +158,23 @@
         border-radius: 10px;
         padding: 10px;
     }
+    &__btn-borrar {
+        width: 30px;
+        color: #fff;
+        background-color: #f30606;
+        border: none;
+        border-radius: 50px;
+        align-self: flex-end;
+    }
+    &__btn--guardar {
+        width: 200px;
+        color: #fff;
+        background-color: #1bc015;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        align-self: center;
+    }
     &__btn--marcar {
         width: 120px;
         color: #fff;
@@ -168,6 +201,9 @@
         background-color: #168a12;
     }
     &__btn--agregar:hover {
+        background-color: #168a12;
+    }
+    &__btn--guardar:hover {
         background-color: #168a12;
     }
     &__btn--parar:hover {

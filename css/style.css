@@ -38,6 +38,12 @@
   width: 80%;
   padding: 10px;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contenedor__resultado p {
+  margin: 0;
 }
 .contenedor__resultados {
   display: flex;
@@ -97,6 +103,16 @@
   position: relative;
   left: 0;
 }
+.contenedor__marcadoresGuardados {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+}
 .contenedor__error {
   color: #f30606;
 }
@@ -138,6 +154,23 @@
   border-radius: 10px;
   padding: 10px;
 }
+.contenedor__btn-borrar {
+  width: 30px;
+  color: #fff;
+  background-color: #f30606;
+  border: none;
+  border-radius: 50px;
+  align-self: flex-end;
+}
+.contenedor__btn--guardar {
+  width: 200px;
+  color: #fff;
+  background-color: #1bc015;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  align-self: center;
+}
 .contenedor__btn--marcar {
   width: 120px;
   color: #fff;
@@ -164,6 +197,9 @@
   background-color: #168a12;
 }
 .contenedor__btn--agregar:hover {
+  background-color: #168a12;
+}
+.contenedor__btn--guardar:hover {
   background-color: #168a12;
 }
 .contenedor__btn--parar:hover {
